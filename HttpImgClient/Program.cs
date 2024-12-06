@@ -15,12 +15,20 @@ class Program
         {
             Console.WriteLine("请输入上传文件的路径：");
             filePath = Console.ReadLine();
-            Console.WriteLine("请选择你的上传路由：1.默认路由 2.自定义路由");
+            Console.WriteLine("请选择你的上传路由：1.默认本地路由 2.自定义路由");
             string route = Console.ReadLine();
-            if (route == "2")
+            if (route == "1")
+            {
+                url = "http://localhost:8080/upload";
+            }
+            else if (route == "2")
             {
                 Console.WriteLine("请输入你的上传路由：");
                 url = Console.ReadLine();
+            }
+            else
+            {
+                url = "http://localhost:8080/upload";
             }
             
             Console.WriteLine("开始执行上传...");
